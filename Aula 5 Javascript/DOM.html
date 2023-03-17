@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, impedit quibusdam, aliquam quae iusto
+        blanditiis praesentium quas nam voluptatibus a nemo molestiae soluta, beatae dignissimos error quisquam atque
+        similique laborum.</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic neque quia est ad minus, molestias quis, eos ut
+        eius, nam quasi quo facere tempora quas praesentium. Non optio impedit adipisci.</p>
+
+    <div class="container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia et accusantium ipsam. Itaque saepe aliquid
+            deserunt non officia sunt animi reprehenderit fuga harum quasi iste, nihil eaque adipisci id ab!</p>
+    </div>
+    <div class="container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet vel quod veniam ut, alias odit eaque,
+            explicabo, sit recusandae quis id aliquam perferendis natus repudiandae rem optio inventore? Molestias, est.
+        </p>
+    </div>
+
+    <label for="">curtir?</label>
+    <label for="">
+        <input type="radio" name="curtir" value="sim" id=""> Sim
+    </label>
+
+    <label for="" >
+        <input type="radio" name="curtir" value="Não" id=""> Não
+    </label>
+
+    <label for="nome" style="display: block;">Nome</label>
+    <input type="text" name="nome" id="nome">
+    
+    <button type="button" onclick="acessarDOM()">Acessar o DOM</button>
+    <script>
+        function acessarDOM(){
+            // Todo o corpo do documento
+            console.log(document.body)
+
+            // Busca pela TAG 
+            var tagsP = document.getElementsByTagName("p")
+            console.log(tagsP)
+
+            // Busca pela classe
+            var divs = document.getElementsByClassName("container")
+            console.log(divs)
+
+            // Busca pelo nome 
+            var radios = document.getElementsByName("curtir")
+            console.log(radios)
+
+            // Busca pelo ID 
+            var nome = document.getElementById("nome")
+            console.log(nome.value)
+            alert(nome.value)
+
+            // Busca por seletor 
+            var curtido = document.querySelector("input[type='radio']:checked")
+            console.log(curtido.value)
+
+            // Busca por seletor 
+            var pS = document.querySelector("p")
+            console.log(pS)
+            pS = document.querySelectorAll("p")
+            console.log(pS)
+            
+        }
+    </script>
+</body>
+
+</html>

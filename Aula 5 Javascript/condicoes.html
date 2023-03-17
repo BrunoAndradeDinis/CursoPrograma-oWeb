@@ -73,24 +73,22 @@
         else console.log("Pode entrar não menó :/")
 
         // Switch case 
-        switch (estado) {
-            case "MG":
-                estado = "Minas Gerais";
-                break;
-            case "ES":
-                estado = "Espirito Santo";
-                break;
-            case "RJ":
-                estado = "Rio de Janeiro";
-                break;
-            case "SP":
-                estado = "São Paulo";
-                break;
-            default:
-                estado = "Não especificado";
-                break;
+        function valorzin(x) {
+            var x 
+            switch (x) {
+            case "MG": x = "Minas Gerais"; break;
+            case "ES": x = "Espirito Santo"; break;
+            case "RJ": x = "Rio de Janeiro"; break;
+            case "SP": x = "São Paulo"; break;
+            default: x = "Não especificado"; break;
+        }
+        console.log(x)
 
         }
+       
+        valorzin(estado)
+        valorzin("BA")
+
     </script>
 </body>
 
