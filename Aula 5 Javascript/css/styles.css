@@ -1,0 +1,13 @@
+table, td {
+    border: solid black 1px;
+    border-radius: 5px;
+}
+
+td {
+    padding: 15px;
+}
+
+thead {
+    background-color: gray;
+    color: aliceblue;
+}
