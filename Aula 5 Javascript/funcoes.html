@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções</title>
+</head>
+
+<body>
+    <h1>Funções em JS</h1>
+
+    <script>
+        // função simples
+        function aviso() {
+            console.log("A function foi executada!")
+            alert("Aviso! Este é um aviso!")
+        }
+
+        // chama a função
+        // aviso() 
+        var h1 = document.querySelector("h1")
+        console.log(h1)
+        h1.addEventListener("click", function () {
+            aviso()
+        })
+
+        // Função com parametros
+        function soma(a, b) {
+            var soma = a + b
+            console.log(`o resultado da soma é: ${soma}`)
+
+            return soma
+        }
+
+        // chama a função
+        // soma(2, 7)
+        // soma(99, 200)
+
+        var resultado = soma(234, 999)
+
+        console.log(resultado)
+
+        // escopos
+        // variável global
+        var global = 1
+
+        function escopo() {
+            // variável local
+            let local = 2
+
+            console.log(global)
+            console.log(local)
+        }
+        escopo()
+
+        console.log(global)
+        // console.log(local)
+
+        if (global === 1) {
+            // variável com escopo de bloco
+            let bloco = 3
+
+            console.log(bloco)
+        }
+
+        // console.log(bloco)
+    </script>
+</body>
+
+</html>

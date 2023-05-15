@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+</head>
+
+<body>
+    <h1>Faça uma página onde o usuário digite o ano de seu nascimento e mostre a sua idade</h1>
+
+
+    <form method="post">
+        <label for="ano_de_nascimento">Ano de nascimento</label><br>
+
+        <input type="number" id="ano_de_nascimento" placeholder="Digite o ano de seu nascimenro" required> <br><br>
+
+
+        <button type="button" onclick="caclidade()">Clique aqui!</button>
+
+        <h3 id="resultado"></h3>
+
+    </form>
+    <script>
+        function caclidade() {
+            var ano = document.getElementById("ano_de_nascimento").value
+            console.log(ano)
+
+            var idade = 2023 - ano
+
+            // alert(`Sua idade é ${idade}`)
+            document.getElementById("resultado").innerHTML = `Sua idade é ${idade} anos`
+        }
+    </script>
+</body>
+
+</html>
