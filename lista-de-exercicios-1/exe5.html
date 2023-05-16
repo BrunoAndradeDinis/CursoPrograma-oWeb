@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5</title>
+    <style>
+        div>* {
+            display: block;
+            margin: 1rem auto;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Faça uma página onde o usuário digite o seu nome e o seu sobrenome e mostre o nome completo</h1>
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" placeholder="Digite o seu nome:">
+        <label for="sobrenome">Sobrenome</label>
+        <input type="text" id="sobrenome" placeholder="Digite o seu sobrenome:">
+        <button>Enviar</button>
+        <h2 id="resultado"></h2>
+    </div>
+    <script>
+        let button = document.querySelector("button")
+        console.log(button)
+
+        button.addEventListener("click", function () {
+            let nome = document.getElementById("nome").value
+            let sobrenome = document.getElementById("sobrenome").value
+            let completo = nome + " " + sobrenome
+
+            document.getElementById("resultado").innerHTML = `O seu nome completo é ${completo}`
+        })
+    </script>
+</body>
+
+</html>
