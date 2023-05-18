@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+    <style>
+       body {
+            background-color: lightgrey;
+        }
+        div>* {
+            display: block;
+            margin: 1em auto;
+            text-align: center;
+            width: 40%;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        fieldset {
+            border-radius: 20px;
+            box-shadow: 2px 2px 20px black;
+            background-color: blueviolet;
+            color: azure;
+        }
+
+        input {
+            border-radius: 1rem;
+            width: 100%;
+            border: none;
+        }
+        button {
+            border-radius: 0 1rem;
+            border: hidden;
+            background-color: rgb(82, 26, 135);
+            color: azure;
+            transition: 0.5s ease-in-out;
+        }
+
+        button:hover{
+            transform: scale(1.1);
+            transition: 0.5s ease-in-out;
+            background-color: rgba(82, 26, 135, 0.765);
+            color: #FFF;
+            border: 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <!-- <h1>Faça um sistema que receba o preço de um produto e a porcentagem de desconto e exiba o valor do desconto e o
+            valor do produto com o desconto.</h1> -->
+
+        <form id="formulario" name="formulario">
+            <fieldset>
+                <legend>Vendas</legend>
+                <div>
+                    <label for="preco">Valor do produto</label>
+                    <input type="number" id="preco" name="preco" min="1" required placeholder="Digite o valor do produto:">
+                </div>
+                <div>
+                    <label for="desconto">Porcentagem de desconto</label>
+                    <input type="number" id="desconto" name="desconto" required min="1" max="99" placeholder="Digite a % de desconto:">
+                </div>
+                <div>
+                    <button type="submit">Calcular</button>
+                </div>
+                <h3 id="resultado"></h3>
+            </fieldset>
+        </form>
+    </div>
+    
+
+    <script>
+
+        document.querySelector("form").addEventListener("submit", function (evento) {
+            evento.preventDefault()
+            let valor = document.getElementById("preco").value
+            let desconto = document.getElementById("desconto").value / 100 * Number(valor)
+            let resultado = valor - desconto
+
+            document.getElementById("resultado").innerHTML = `O valor do produto com desconto é R$ ${resultado.toFixed(2)} <br> O valor do desconto é R$${Number(desconto).toFixed(2)}`
+
+        })
+
+    </script>
+</body>
+
+</html>

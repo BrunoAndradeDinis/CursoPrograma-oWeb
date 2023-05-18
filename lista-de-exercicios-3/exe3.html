@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3</title>
+    <style>
+        div > * {
+            display: block;
+            text-align: center;
+            margin: 1em auto;
+            width: 40%;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Faça uma página que receba a meta de vendas e o valor vendido e encontre a porcentagem de atingimento da
+            meta.</h1>
+        <fieldset>
+            <legend>Vendas</legend>
+            <div>
+                <label for="meta">Meta</label>
+                <input type="number" id="meta" placeholder="Digite valor de sua meta: ">
+            </div>
+            <div>
+                <label for="vendido">Vendido</label>
+                <input type="number" id="vendido" placeholder="Digite o valor vendido">
+            </div>
+        </fieldset>
+        <button onclick="calcular()">Calcular</button>
+    </div>
+    <script>
+        function calcular(){
+            let meta = document.getElementById("meta").value
+            let vendido = document.getElementById("vendido").value
+            let atingimento = (vendido / meta) * 100
+            let resultado = document.createElement("h5") // aqui ele cria o elemento que será adicionado ao documento
+
+            if (document.querySelector("h5") != undefined){ // aqui é uma condição para validar se tem algum h5 para ser removido no body.
+                document.querySelector("h5").remove()
+            }
+            
+            resultado.innerHTML = `A porcentagem de meta atingida até agora é R$ ${atingimento.toFixed(2)}%`
+            document.querySelector("fieldset").appendChild(resultado) // aqui ele inclui o elemento ao documento
+            console.log(resultado)
+        }
+    </script>
+</body>
+
+</html>
