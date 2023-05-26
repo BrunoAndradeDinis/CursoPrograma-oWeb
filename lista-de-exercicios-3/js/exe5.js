@@ -21,6 +21,15 @@ document.getElementById("formulario").addEventListener("submit", function (event
     let x2 = (-b - raizdelta) / (2 * a)
     console.log(x1, x2)
 
-    document.getElementById("resultado").innerHTML = `O valor de X1 é = ${x1.toFixed(2)} <br>O valor de x2 é = ${x2.toFixed(2)}`
+    let resultado = document.createElement("h3")
+
+    if (document.querySelector("h3") != undefined) {
+        document.querySelector("h3").remove()
+    }
+
+    resultado.innerHTML = `O valor de X1 é = ${x1.toFixed(2)} <br>O valor de x2 é = ${x2.toFixed(2)}`
+    document.querySelector("fieldset").appendChild(resultado)
+
+
 
 })
