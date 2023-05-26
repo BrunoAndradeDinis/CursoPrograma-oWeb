@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4</title>
+    <style>
+        body {
+            background-color: lightgrey;
+        }
+
+        div>* {
+            display: block;
+            margin: 1em auto;
+            text-align: center;
+            width: 40%;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        fieldset {
+            border-radius: 20px;
+            box-shadow: 2px 2px 20px black;
+            background-color: blueviolet;
+            color: azure;
+        }
+
+        input {
+            text-align: center;
+            border-radius: 1rem;
+            width: 80%;
+            border: none;
+            padding: 0 1em;
+        }
+
+        button {
+            border-radius: 0 1rem;
+            border: hidden;
+            background-color: rgb(82, 26, 135);
+            color: azure;
+            transition: 0.5s ease-in-out;
+            width: 50%;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            transition: 0.5s ease-in-out;
+            background-color: rgba(82, 26, 135, 0.765);
+            color: #FFF;
+            border: 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <!-- <h1>Faça uma página que receba um número e exiba a tabuada desse número do 1 ao 10.</h1> -->
+        <fieldset>
+            <legend>X</legend>
+            <form id="formulario" name="formulario">
+                <div>
+                    <label for="tabuada">Tabuada</label>
+                    <input type="number" id="tabuada" placeholder="Digite um número: " required>
+                    <button type="submit">Calcular</button>
+                    <button type="button">Limpar</button>
+                </div>
+            </form>
+        </fieldset>
+
+    </div>
+
+    <script>
+        document.querySelector("form").addEventListener("submit", function (evento) {
+            evento.preventDefault()
+            let numero = document.getElementById("tabuada").value
+            let resultado = []
+            let lista = document.createElement("ol")
+            if (document.querySelector("ol") != undefined) {
+                document.querySelector("ol").remove()
+            }
+            document.querySelector("fieldset").appendChild(lista)
+
+            console.log(resultado[1])
+            if (document.querySelector("li") != undefined) {
+                for (let i = 1; i <= 10; i++) {
+                    resultado[i] = document.querySelector("li")
+                    resultado[i].remove()
+                }
+            }
+
+            for (let i = 1; i <= 10; i++) {
+                console.log(Number(numero) * i)
+                resultado[i] = document.createElement("li")
+                resultado[i].innerHTML = `${Number(numero)} X ${i} = ${Number(numero) * i}`
+                document.querySelector("ol").appendChild(resultado[i])
+            }
+        })
+
+
+
+        document.querySelector("button[type='button']").addEventListener("click", function () {
+            let resultado = []
+            if (document.querySelector("ol") != undefined) {
+                document.querySelector("ol").remove()
+            }
+            for (let i = 1; i <= 10; i++) {
+                resultado[i] = document.querySelector("li")
+                resultado[i].remove()
+            }
+        })
+    </script>
+</body>
+
+</html>

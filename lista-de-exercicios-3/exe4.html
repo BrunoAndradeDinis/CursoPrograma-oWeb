@@ -1,15 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercicio 4</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
     <div>
-        <h1>Faça uma página que receba uma lista de números separados por vírgula e exiba o maior número da lista.
-        </h1>
+        <!-- <h1>Faça uma página que receba uma lista de números separados por vírgula e exiba o maior número da lista.
+        </h1> -->
+        <fieldset>
+            <legend>Lista de números</legend>
+            <form name="formulario" id="formulario">
+                <div>
+                    <label for="num">Números</label>
+                    <input type="text" id="num" placeholder="Sequência de números separados por ',': " required>
+                </div>
+                <button type="submit">Calcular</button>
+
+            </form>
+        </fieldset>
     </div>
+
+    <script src="./js/exe4.js"></script>
 </body>
+
 </html>

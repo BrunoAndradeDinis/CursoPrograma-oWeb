@@ -6,51 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercicio 1</title>
-    <style>
-        body {
-            background-color: lightgrey;
-        }
-
-        div>* {
-            display: block;
-            margin: 1em auto;
-            text-align: center;
-            width: 40%;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        }
-
-        fieldset {
-            border-radius: 20px;
-            box-shadow: 2px 2px 20px black;
-            background-color: blueviolet;
-            color: azure;
-        }
-
-        input {
-            text-align: center;
-            border-radius: 1rem;
-            width: 80%;
-            border: none;
-            padding: 0 1em;
-        }
-
-        button {
-            border-radius: 0 1rem;
-            border: hidden;
-            background-color: rgb(82, 26, 135);
-            color: azure;
-            transition: 0.5s ease-in-out;
-            width: 50%;
-        }
-
-        button:hover {
-            transform: scale(1.1);
-            transition: 0.5s ease-in-out;
-            background-color: rgba(82, 26, 135, 0.765);
-            color: #FFF;
-            border: 1px solid;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
@@ -62,28 +18,13 @@
             <form>
                 <div>
                     <label for="raio">Area</label>
-                    <input type="number" id="raio" placeholder="Digite a area aqui: ">
+                    <input type="text" id="raio" placeholder="Digite a area aqui: " required min="1.0000000">
                     <button type="submit">Calcular</button>
                 </div>
             </form>
         </fieldset>
     </div>
-
-    <script>
-        document.querySelector("form").addEventListener("submit", function(evento) {
-            evento.preventDefault()
-            let raio = document.getElementById("raio").value
-            let area = 2 * 3.14 * raio
-            console.log(area)
-            let resultado = document.createElement("h4")
-            if(document.querySelector("h4") != undefined){
-                document.querySelector("h4").remove()
-            }
-
-            resultado.innerHTML = `A area do circulo é ${area.toFixed(2)}`
-            document.querySelector("fieldset").appendChild(resultado)
-
-        })
+    <script src="./js/exe1.js">
     </script>
 </body>
 

@@ -1,42 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercicio 2</title>
-    <style>
-        div > *, button, h4{
-            display: block;
-            text-align: center;
-            margin: 1em auto;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
     <div>
-        <h1>Faça uma página que receba o valor de dois catetos de um triângulo retângulo e exiba o resultado da hipotenusa do mesmo. Use a fórmula: h² = c² + c²</h1>
+        <!-- <h1>Faça uma página que receba o valor de dois catetos de um triângulo retângulo e exiba o resultado da
+            hipotenusa do mesmo. Use a fórmula: h² = c² + c²</h1> -->
         <fieldset>
             <legend>Catetos</legend>
-            <input type="number" id="cateto1" placeholder="Digite o primeiro cateto:">
-            <input type="number" id="cateto2" placeholder="Digite o segundo cateto: ">
-            <button onclick="calcular()">Calcular</button>
+            <form id="formulario" name="formulario">
+                <div>
+                    <input type="text" id="cateto1" placeholder="Digite o primeiro cateto:" required>
+                    <input type="text" id="cateto2" placeholder="Digite o segundo cateto: " required>
+                    <button type="submit">Calcular</button>
+                </div>
+            </form>
         </fieldset>
     </div>
-    <script>
-        function calcular(){
-            let cateto1 = document.getElementById("cateto1").value
-            let cateto2 = document.getElementById("cateto2").value
-            let hipotenusa = Math.sqrt((cateto1 * 2) + (cateto2 * 2))
-            console.log(hipotenusa)
-            let resultado = document.createElement("h4")
-            if (document.querySelector("h4") != undefined){
-                document.querySelector("h4").remove()
-            }
+    <script src="./js/exe2.js">
 
-            resultado.innerHTML = `O resultado da hiptenusa é ${hipotenusa.toFixed(2)}`
-            document.querySelector("fieldset").appendChild(resultado)
-        }
     </script>
 </body>
+
 </html>

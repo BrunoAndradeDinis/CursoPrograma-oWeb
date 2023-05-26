@@ -1,18 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercicio 5</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
     <div>
-        <h1>Considerando uma equação de segundo grau (a.x² + b.x + c = 0), faça um sistema que receba os valores de a, b e c, e exiba o resultado de x1 e x2 usando a fórmula de bhaskara: 
+        <!-- <h1>Considerando uma equação de segundo grau (a.x² + b.x + c = 0), faça um sistema que receba os valores de a, b
+            e c, e exiba o resultado de x1 e x2 usando a fórmula de bhaskara:
             ∆ = b² - 4. a. c
             x1 = - b + √∆ / 2 . a
             x2 = - b - √∆ / 2 . a
-            </h1>
+        </h1> -->
+        <fieldset>
+            <legend>Equação de segundo grau </legend>
+            <form name="formulario" id="formulario">
+
+                <div>
+                    <label for="numA">A</label>
+                    <input type="text" id="numA" placeholder="Digite o valor de A: " required>
+                </div>
+
+                <div>
+                    <label for="numB">B</label>
+                    <input type="text" id="numB" placeholder="Digite o valor de B: " required>
+                </div>
+
+                <div>
+                    <label for="numC">C</label>
+                    <input type="text" id="numC" placeholder="Digite o valor de C: " required>
+                </div>
+
+                <button type="submit">Calcular</button>
+                <h3 id="resultado"></h3>
+            </form>
+        </fieldset>
     </div>
+
+    <script src="./js/exe5.js"></script>
 </body>
+
 </html>
