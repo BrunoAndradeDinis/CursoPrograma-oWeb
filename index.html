@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de programação web</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .container div {
+            border-radius: 20px;
+            background-color: blueviolet;
+            padding: 1rem;
+            color: azure;
+            box-shadow: 0 0 20px black;
+        }
+
+        li {
+            text-align: left;
+            list-style: none;
+            display: block;
+            font-size: 1rem;
+            padding-left: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: azure;
+
+        }
+
+        li:hover {
+            transform: scale(1.1);
+            transition: 0.3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Curso de programação web</h1>
+
+    <div id="iframeContainer">
+        <label for="close">X</label>
+        <input type="checkbox" name="close" id="close">
+        <iframe src="./lista-de-exercicios-3/exe3.html" height="100%" width="100%"></iframe>
+    </div>
+    <div class="container">
+        <div>
+            <h2>Arquivos de introdução</h2>
+            <ul class="alfabetica">
+                <li><a target="_blank" href="./Aula 5 Javascript/arrays.html">Arrays</a></li>
+                <li><a target="_blank" href="./Aula 4 HTML + CSS/blog.html">Blog</a></li>
+                <li><a target="_blank" href="./Aula 5 Javascript/condicoes.html">Condições</a></li>
+                <li><a target="_blank" href="./Aula 5 Javascript/DOM.html">DOM</a></li>
+                <li><a target="_blank" href="./Aula 5 Javascript/eventos.html">eventos</a></li>
+                <li><a target="_blank" href="./Aula 4 HTML + CSS/formulario.html">Formulário</a></li>
+                <li><a target="_blank" href="./Aula 5 Javascript/funcoes.html">Funções</a></li>
+                <li><a target="_blank" href="./Aula 5 Javascript/loops.html">Loops</a></li>
+                <li><a target="_blank" href="./Aula 3 HTML + CSS/blog.html">Olá Mundo</a></li>
+                <li><a target="_blank" href="./Aula 5 Javascript/operadores.html">Operadores </a></li>
+                <li><a target="_blank" href="./Aula 5 Javascript/script.html">Script</a></li>
+                <li><a target="_blank" href="./Aula 5 Javascript/introdução.html">Tags principais</a></li>
+            </ul>
+
+        </div>
+        <div>
+            <h2>Lista de exercicio 1</h2>
+            <ul>
+                <li><a href="./lista-de-exercicios-1/exe1.html">Exercicio 1</a></li>
+                <li><a href="./lista-de-exercicios-1/exe2.html">Exercicio 2</a></li>
+                <li><a href="./lista-de-exercicios-1/exe3.html">Exercicio 3</a></li>
+                <li><a href="./lista-de-exercicios-1/exe4.html">Exercicio 4</a></li>
+                <li><a href="./lista-de-exercicios-1/exe5.html">Exercicio 5</a></li>
+            </ul>
+        </div>
+        <div>
+            </h2>
+            <h2>Lista de exercicio 2</h2>
+            <ul>
+                <li><a href="./lista-de-exercicios-2/exe1.html">Exercicio 1</a></li>
+                <li><a href="./lista-de-exercicios-2/exe2.html">Exercicio 2</a></li>
+                <li><a href="./lista-de-exercicios-2/exe3.html">Exercicio 3</a></li>
+                <li><a href="./lista-de-exercicios-2/exe4.html">Exercicio 4</a></li>
+                <li><a href="./lista-de-exercicios-2/exe5.html">Exercicio 5</a></li>
+            </ul>
+        </div>
+        <div>
+            <h2>Lista de exercicio 3 </h2>
+            <ul>
+                <li><a href="./lista-de-exercicios-3/exe1.html">Exercicio 1</a></li>
+                <li><a href="./lista-de-exercicios-3/exe2.html">Exercicio 2</a></li>
+                <li><a href="./lista-de-exercicios-3/exe3.html">Exercicio 3</a></li>
+                <li><a href="./lista-de-exercicios-3/exe4.html">Exercicio 4</a></li>
+                <li><a href="./lista-de-exercicios-3/exe5.html">Exercicio 5</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <p>Curso de Introdução a Programação web, que traz conhecimentos fundamentais em HTML, CSS e Javascript.</p>
+    <script>
+        var openButton = document.querySelector("ul");
+        var closeButton = document.querySelector("input");
+        var iframeContainer = document.getElementById("iframeContainer");
+
+        closeButton.addEventListener("click", function () {
+            iframeContainer.style.display = "none";
+        });
+
+        var anchorList = document.querySelectorAll('ul li a');
+        var iframe = document.querySelector("iframe")
+        console.log(iframe)
+        // Adiciona um evento de clique em cada âncora
+        anchorList.forEach(function (anchor) {
+            anchor.addEventListener('click', function (event) {
+                event.preventDefault(); // Impede o comportamento padrão do clique no link
+
+                var href = event.target.href; // Obtém o valor do atributo href
+                console.log(href)
+                iframe.src = href; // Atribui o valor do atributo href ao atributo src do iframe
+
+                iframeContainer.style.display = "block";
+            });
+        });
+
+    </script>
+</body>
+
+</html>

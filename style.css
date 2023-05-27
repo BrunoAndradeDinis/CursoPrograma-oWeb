@@ -1,0 +1,35 @@
+
+
+
+/* Aqui será modificado toda parte do Iframe para abrir uma janela */
+#iframeContainer {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    height: 80vh;
+    background-color: #f1f1f1;
+    border-radius: 20px;
+    box-shadow: 0 0 40px;
+    overflow: hidden;
+    background-color: lightgrey;
+  }
+label {
+  position: fixed;
+  right: 1.5rem;
+  top: 1rem;
+}
+label:hover{
+  cursor: pointer;
+  color: #ffc;
+  text-shadow: 0 0 0 20px black
+}
+
+input {
+  width: 100px;
+  height: 100px;
+  z-index: 99;
+  display: none;
+}
