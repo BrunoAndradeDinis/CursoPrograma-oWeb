@@ -39,15 +39,15 @@ li {
   font-size: 1rem;
   padding-left: 1em;
   margin: 0 2rem .3em 0;
-  border-radius: 5px;
-  border: solid;
+  
 }
 
 a {
   display: block;
   text-decoration: none;
   color: azure;
-
+  border-radius: 5px;
+  border: solid;
 }
 
 li a:hover {
