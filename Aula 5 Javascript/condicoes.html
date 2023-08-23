@@ -74,21 +74,52 @@
 
         // Switch case 
         function valorzin(x) {
-            var x 
+            var x
             switch (x) {
-            case "MG": x = "Minas Gerais"; break;
-            case "ES": x = "Espirito Santo"; break;
-            case "RJ": x = "Rio de Janeiro"; break;
-            case "SP": x = "São Paulo"; break;
-            default: x = "Não especificado"; break;
-        }
-        console.log(x)
+                case "MG":
+                    x = "Minas Gerais";
+                    break;
+                case "ES":
+                    x = "Espirito Santo";
+                    break;
+                case "RJ":
+                    x = "Rio de Janeiro";
+                    break;
+                case "SP":
+                    x = "São Paulo";
+                    break;
+                default:
+                    x = "Não especificado";
+                    break;
+            }
+            console.log(x)
 
         }
-       
+
         valorzin(estado)
         valorzin("BA")
 
+        // Operador condicional ternário 
+
+        // Caso retorne true
+        var idade = 22
+        var maiorDeIdade = idade >= 18 ? "Maior de Idade!" : "Menor de Idade"
+        // if (idade >= 18) maiorDeIdade = "Maior de Idade"
+        // else maiorDeIdade = "Menor de idade"
+        console.log(maiorDeIdade)
+
+        // Caso retorne false
+        idade = 17
+        var maiorDeIdade = idade >= 18 ? "Maior de Idade!" : "Menor de Idade"
+        console.log(maiorDeIdade)
+
+        // Testando se o valor existe
+        var idadeExiste = idade ? true : false
+        console.log(idadeExiste)
+
+        idade = null
+        idadeExiste = idade ? true : false
+        console.log(idadeExiste)
     </script>
 </body>
 
