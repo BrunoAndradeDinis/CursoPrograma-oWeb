@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Operações aritméticas</title>
 </head>
+
 <body>
     <h1>Operações aritméticas</h1>
     <script>
@@ -14,7 +16,7 @@
         var resultado
 
         // Adição
-        resultado =(x + y)
+        resultado = (x + y)
         console.log(`Adição de ${x} + ${y} = ${resultado}`)
 
         // Subtração
@@ -28,7 +30,7 @@
         // Divisão
         resultado = y / x
         console.log("Divisão " + y + " / " + x + " = " + resultado)
-         
+
         // Exponenciação
         resultado = y ** x
         console.log(`Exponenciação de ${y} ^ ${x} = ${resultado}`)
@@ -47,6 +49,36 @@
         console.log(`Resto da divisão de  ${y} / ${x} = ${resultado}`)
         console.log(`Resto da divisão de  ${x} / ${x} = ${2%2}`)
 
+        // Operadores de Atribuição
+        var contador = 0
+        var numeros = [1, 2, 3, 4, 5]
+
+        // Atribuição de soma
+        numeros.forEach(numero => {
+            contador += numero
+        })
+        console.log(contador)
+
+        // Atribuição de subtração
+        numeros.forEach(numero => {
+            contador -= numero
+        })
+        console.log(contador)
+
+        var numero = numeros[0]
+
+        // Atribuição de multiplicação
+        numero *= 4
+        console.log(numero)
+
+        // Atribuição de divisão
+        numero /= 2
+        console.log(numero)
+
+        // Atribuição de exponenciação
+        numero **= 3
+        console.log(numero)
     </script>
 </body>
+
 </html>

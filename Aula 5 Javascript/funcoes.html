@@ -106,35 +106,43 @@
         var valoresMaisUm = lista.map(valor => valor + 1)
         console.log(valoresMaisUm)
 
-        // Operadores de Atribuição
-        var contador = 0
-        var numeros = [1, 2, 3, 4, 5]
+        // Função que retorna promessa
+        function delay(seg) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve(seg)
+                }, seg * 1000)
+            })
+        }
 
-        // Atribuição de soma
-        numeros.forEach(numero => {
-            contador += numero
-        })
-        console.log(contador)
+        // Função Assincrona
+        async function assincrona() {
+            console.log("Iniciou a execução da função")
+            let segundos
 
-        // Atribuição de subtração
-        numeros.forEach(numero => {
-            contador -= numero
-        })
-        console.log(contador)
+            segundos = await delay(3)
+            console.log(`Demorou ${segundos} segundos para logar!`)
+            segundos = await delay(5)
+            console.log(`Demorou ${segundos} segundos para logar!`)
+            segundos = await delay(10)
+            console.log(`Demorou ${segundos} segundos para logar!`)
+        }
+        assincrona()
 
-        var numero = numeros[0]
+        // Função assincrona que faz o Fetch
+        async function getData() {
+            try {
+                const req = await fetch('https://jsonplaceholder.typicode.com/posts')
+                console.log(req)
 
-        // Atribuição de multiplicação
-        numero *= 4
-        console.log(numero)
+                const res = await req.json()
+                console.log(res)
+            } catch (error) {
+                console.log(error.message)
+            }
+        }
 
-        // Atribuição de divisão
-        numero /= 2
-        console.log(numero)
-
-        // Atribuição de exponenciação
-        numero **= 3
-        console.log(numero)
+        getData()
     </script>
 </body>
 
