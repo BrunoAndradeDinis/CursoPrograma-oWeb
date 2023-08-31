@@ -1,13 +1,32 @@
-table, td {
-    border: solid black 1px;
-    border-radius: 5px;
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-td {
-    padding: 15px;
+body{
+    padding-top: 2rem;
+    font-family: 'Questrial', sans-serif;
+}
+h2 {
+    margin-top: 1rem;
+}
+pre {
+    max-width: 100%;
+    overflow-x: auto;
 }
 
-thead {
-    background-color: gray;
-    color: aliceblue;
+pre.prettyprint {
+    width: 100%;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+    height: 5rem;
 }

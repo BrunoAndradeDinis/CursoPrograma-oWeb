@@ -6,17 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eventos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/google/code-prettify@master/styles/sunburst.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <style>
-        div>*,
-        form>* {
-            display: block;
-            margin: 0.5rem auto;
-            text-align: center;
-        }
     </style>
 </head>
 
 <body style="background-color: aliceblue;">
+
+    <div class="container">
+        <h1>Eventos</h1>
+        <div>
+            <h2>Duplo clique</h2>
+
+            <form>
+                <input type="text" id="nome" name="nome" placeholder="Digite o seu nome:"> <br>
+                <input type="number" name="idade" id="idade" placeholder="Digite sua idade:"> <br>
+                <button type="button">Click aqui!</button> <br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <h2>HTML</h2>
+        <pre class="prettyprint">
+            <code class="language-html">
+<xmp>
     <div>
         <h1>Eventos</h1>
 
@@ -29,39 +45,60 @@
             <button type="submit">Submit</button>
         </form>
     </div>
+</xmp>
+            </code>
+        </pre>
+        <h2>JavaScript</h2>
+        <div class="alert alert-primary" role="alert">
+            Abra o console apertando <strong>F12</strong> e indo na aba console
+        </div>
+        <pre class="prettyprint">
+            <code class="language-javascript">
+    // Carregamento da página
+    window.addEventListener("load", function () {
+        console.log("Página carregada com sucesso!")
+    })
 
-    <script>
-        // Carregamento da página
-        window.addEventListener("load", function () {
-            console.log("Página carregada com sucesso!")
-        })
+    // duplo clique
+    document.querySelector("h2").addEventListener("dblclick", function () {
+        alert("Double kill!")
+    })
 
-        // duplo clique
-        document.querySelector("h2").addEventListener("dblclick", function () {
-            alert("Double kill!")
-        })
+    // Change - Assim que sair do campo selecionado e tiver alterado o valor ele retorna  a informação.
+    document.getElementById("nome").addEventListener("change", function (evento) {
+        console.log(evento)
+        alert("O novo nome é " + evento.target.value)
+    })
 
-        // Change - Assim que sair do campo selecionado e tiver alterado o valor ele retorna  a informação.
-        document.getElementById("nome").addEventListener("change", function (evento) {
-            console.log(evento)
-            alert("O novo nome é " + evento.target.value)
-        })
+    // Input - assim que a pessoa digita os dados ele ja retorna, assim que entrar o dado ele notifica
+    document.getElementById("idade").addEventListener("input", function (evento) {
+        console.log("A nova idade é: " + evento.target.value)
+    })
 
-        // Input - assim que a pessoa digita os dados ele ja retorna, assim que entrar o dado ele notifica
-        document.getElementById("idade").addEventListener("input", function (evento) {
-            console.log("A nova idade é: " + evento.target.value)
-        })
+    // Click 
+    document.querySelector("button[type='button']").addEventListener("click", function () {
+        alert("Clica na tua mão rapaz!")
+    })
 
-        // Click 
-        document.querySelector("button[type='button']").addEventListener("click", function () {
-            alert("Clica na tua mão rapaz!")
-        })
+    // Submit
+    document.querySelector("form").addEventListener("submit", function (evento) {
+        evento.preventDefault()
+        alert("Submit!")
+    })
+            </code>
+        </pre>
+    </div>
+    <footer>
+        <div>
+            <p>©2023 - Curso de Programação Web - Desenvolvido por: ‎ <a href="https://github.com/BrunoAndradeDinis">
+                    Bruno
+                    Andrade</a></p>
+        </div>
+    </footer>
 
-        // Submit
-        document.querySelector("form").addEventListener("submit", function (evento) {
-            evento.preventDefault()
-            alert("Submit!")
-        })
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="./js/eventos.js">
+
     </script>
 </body>
 

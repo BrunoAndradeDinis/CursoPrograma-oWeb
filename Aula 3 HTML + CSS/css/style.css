@@ -20,6 +20,8 @@ button {
 }
 
 footer {
+    position: fixed;
+    bottom: 0;
     margin-top: 10%;
 }
 a {

@@ -6,15 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/google/code-prettify@master/styles/sunburst.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
+    <div class="container">
+        <h1>DOM</h1>
+
+        <h2>HTML</h2>
+
+        <pre class="prettyprint">
+            <code class="language-html">
+<xmp>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, impedit quibusdam, aliquam quae iusto
         blanditiis praesentium quas nam voluptatibus a nemo molestiae soluta, beatae dignissimos error quisquam atque
         similique laborum.</p>
     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic neque quia est ad minus, molestias quis, eos ut
         eius, nam quasi quo facere tempora quas praesentium. Non optio impedit adipisci.</p>
-
+    
     <div class="container">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia et accusantium ipsam. Itaque saepe aliquid
             deserunt non officia sunt animi reprehenderit fuga harum quasi iste, nihil eaque adipisci id ab!</p>
@@ -24,122 +36,182 @@
             explicabo, sit recusandae quis id aliquam perferendis natus repudiandae rem optio inventore? Molestias, est.
         </p>
     </div>
-
+    
     <label for="">Curtir?</label>
     <label for="">
         <input type="radio" name="curtir" value="sim" id=""> Sim
     </label>
-
+    
     <label for="">
         <input type="radio" name="curtir" value="Não" id=""> Não
     </label>
-
+    
     <label for="nome" style="display: block;">Nome</label>
     <input type="text" name="nome" id="nome">
-
     <button type="button" onclick="acessarDOM()">Acessar o DOM</button>
-    <script>
-        function acessarDOM() {
+</xmp>
+            </code>
+        </pre>
+        <h2>JavaScript</h2>
+        <div class="alert alert-primary" role="alert">
+            Abra o console apertando <strong>F12</strong> e indo na aba console
+        </div>
+        <pre class="prettyprint">
+                        <code class="language-javascript">
+            function acessarDOM() {
             // Todo o corpo do documento
             console.log(document.body)
-
+        
             // Busca pela TAG 
             var tagsP = document.getElementsByTagName("p")
             console.log(tagsP)
-
+        
             // Busca pela classe
             var divs = document.getElementsByClassName("container")
             console.log(divs)
-
+        
             // Busca pelo nome 
             var radios = document.getElementsByName("curtir")
             console.log(radios)
-
+        
             // Busca pelo ID 
             var nome = document.getElementById("nome")
             console.log(nome.value)
             alert(nome.value)
-
+        
             // Busca por seletor 
             var curtido = document.querySelector("input[type='radio']:checked")
             console.log(curtido.value)
-
+        
             // Busca por seletor 
             var pS = document.querySelector("p")
             console.log(pS)
             pS = document.querySelectorAll("p")
             console.log(pS)
-
-        }
-        //  HEAD
-
-        //insere um atributo
-        var input = document.getElementById("nome")
-        input.setAttribute("placeholder", "Digite o seu nome: ")
-
-        // le o valor de um atributo 
-        var atributs = input.getAttribute("placeholder")
-        console.log(atributs)
-
-        // altera o conteúdo interno de um elemento.
-        var paragrafo = document.querySelector("p")
-        paragrafo.innerHTML = "Rola meu amigo! Este é o conteúdo interno de um elemento."
-
-        // Escutador de eventos. 
-        paragrafo.addEventListener("click", function () {
+        
+            }
+            //  HEAD
+        
+            //insere um atributo
+            var input = document.getElementById("nome")
+            input.setAttribute("placeholder", "Digite o seu nome: ")
+        
+            // le o valor de um atributo 
+            var atributs = input.getAttribute("placeholder")
+            console.log(atributs)
+        
+            // altera o conteúdo interno de um elemento.
+            var paragrafo = document.querySelector("p")
+            paragrafo.innerHTML = "Rola meu amigo! Este é o conteúdo interno de um elemento."
+        
+            // Escutador de eventos. 
+            paragrafo.addEventListener("click", function () {
             var soma = 2 + 2
             alert(`o primeiro paragráfo de soma ${soma}`)
-        })
-
-        // Estilos
-        paragrafo.style.color = "purple"
-        paragrafo.style.backgroundColor = "lightblue"
-
-        // altera o display 
-        var button = document.querySelector("button")
-
-        button.style.display = "block"
-        //altera cor do fundo
-        button.style.backgroundColor = "dodgerblue"
-        // altera a cor do texto
-        button.style.color = "aliceBlue"
-        // altera a borda do botão
-        button.style.border = "none"
-        // altera o espaçamento interno
-        button.style.padding = "1rem"
-        // altera a margem 
-        button.style.margin = "1rem 0"
-        // altera as bordas
-        button.style.borderRadius = "1rem"
-
-        // CRUD HTML - Create Remove Update Delete
-        //criar
-        var titulo = document.createElement("h1")
-        console.log(titulo)
-        titulo.innerHTML =
+            })
+        
+            // Estilos
+            paragrafo.style.color = "purple"
+            paragrafo.style.backgroundColor = "lightblue"
+        
+            // altera o display 
+            var button = document.querySelector("button")
+        
+            button.style.display = "block"
+            //altera cor do fundo
+            button.style.backgroundColor = "dodgerblue"
+            // altera a cor do texto
+            button.style.color = "aliceBlue"
+            // altera a borda do botão
+            button.style.border = "none"
+            // altera o espaçamento interno
+            button.style.padding = "1rem"
+            // altera a margem 
+            button.style.margin = "1rem 0"
+            // altera as bordas
+            button.style.borderRadius = "1rem"
+        
+            // CRUD HTML - Create Remove Update Delete
+            //criar
+            var titulo = document.createElement("h1")
+            console.log(titulo)
+            titulo.innerHTML =
             "Esse será o titulo que a gente acabou de criar em JS" // aqui voce coloca o texto dentro dele
-        document.body.appendChild(
+            document.body.appendChild(
             titulo) // Aqui ele é atribuído ao body, sempre no seguimento de leitura de cima para baixo.
+        
+            // READ - LER
+            var h1 = document.querySelector("h1")
+            console.log(h1.textContent)
+        
+            // UPDATE - Atualizar
+            paragrafo.textContent = "Fui alterado por JS"
+        
+            // DELETE - Apagar
+            var p = document.querySelector(".container p")
+            // p.remove()
+            var pai = p.parentElement
+            pai.remove(p)
+        
+            // Insere um atributo
+            var input = document.getElementById("nome")
+            input.setAttribute("placeholder", "Digite seu nome!")
+        
+            var atributo = input.getAttribute("placeholder")
+            console.log(atributo)
+                        </code>
+                    </pre>
+    </div>
+    <div class=>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, impedit quibusdam, aliquam quae iusto
+            blanditiis praesentium quas nam voluptatibus a nemo molestiae soluta, beatae dignissimos error quisquam
+            atque
+            similique laborum.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic neque quia est ad minus, molestias quis,
+            eos ut
+            eius, nam quasi quo facere tempora quas praesentium. Non optio impedit adipisci.</p>
 
-        // READ - LER
-        var h1 = document.querySelector("h1")
-        console.log(h1.textContent)
+        <div class="container">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia et accusantium ipsam. Itaque saepe
+                aliquid
+                deserunt non officia sunt animi reprehenderit fuga harum quasi iste, nihil eaque adipisci id ab!</p>
+        </div>
+        <div class="container">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet vel quod veniam ut, alias odit
+                eaque,
+                explicabo, sit recusandae quis id aliquam perferendis natus repudiandae rem optio inventore?
+                Molestias,
+                est.
+            </p>
+        </div>
 
-        // UPDATE - Atualizar
-        paragrafo.textContent = "Fui alterado por JS"
+        <label for="">Curtir?</label>
+        <label for="">
+            <input type="radio" name="curtir" value="sim" id=""> Sim
+        </label>
 
-        // DELETE - Apagar
-        var p = document.querySelector(".container p")
-        // p.remove()
-        var pai = p.parentElement
-        pai.remove(p)
+        <label for="">
+            <input type="radio" name="curtir" value="Não" id=""> Não
+        </label>
 
-        // Insere um atributo
-        var input = document.getElementById("nome")
-        input.setAttribute("placeholder", "Digite seu nome!")
+        <label for="nome" style="display: block;">Nome</label>
+        <input type="text" name="nome" id="nome">
+        <button type="button" onclick="acessarDOM()">Acessar o DOM</button>
 
-        var atributo = input.getAttribute("placeholder")
-        console.log(atributo)
+        </pre>
+    </div>
+
+    <footer>
+        <div>
+            <p>©2023 - Curso de Programação Web - Desenvolvido por: ‎ <a href="https://github.com/BrunoAndradeDinis">
+                    Bruno
+                    Andrade</a></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="./js/DOM.js">
+
     </script>
 </body>
 

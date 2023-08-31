@@ -6,143 +6,166 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Funções</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/google/code-prettify@master/styles/sunburst.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
-    <h1>Funções em JS</h1>
+    <div class="container">
+        <h1>Funções em JS</h1>
 
-    <script>
-        // função simples
-        function aviso() {
-            console.log("A function foi executada!")
-            alert("Aviso! Este é um aviso!")
-        }
+        <div class="alert alert-primary" role="alert">
+            Abra o console apertando <strong>F12</strong> e indo na aba console
+        </div>
+        <pre class="prettyprint">
+        <code class="language-javascript">
+    // função simples
+    function aviso() {
+        console.log("A function foi executada!")
+        alert("Aviso! Este é um aviso!")
+    }
 
-        // chama a função
-        // aviso() 
-        var h1 = document.querySelector("h1")
-        console.log(h1)
-        h1.addEventListener("click", function () {
-            aviso()
-        })
+    // chama a função
+    // aviso() 
+    var h1 = document.querySelector("h1")
+    console.log(h1)
+    h1.addEventListener("click", function () {
+        aviso()
+    })
 
-        // Função com parametros
-        function soma(a, b) {
-            var soma = a + b
-            console.log(`o resultado da soma é: ${soma}`)
+    // Função com parametros
+    function soma(a, b) {
+        var soma = a + b
+        console.log(`o resultado da soma é: ${soma}`)
 
-            return soma
-        }
+        return soma
+    }
 
-        // chama a função
-        // soma(2, 7)
-        // soma(99, 200)
+    // chama a função
+    // soma(2, 7)
+    // soma(99, 200)
 
-        var resultado = soma(234, 999)
+    var resultado = soma(234, 999)
 
-        console.log(resultado)
+    console.log(resultado)
 
-        // escopos
-        // variável global
-        var global = 1
+    // escopos
+    // variável global
+    var global = 1
 
-        function escopo() {
-            // variável local
-            let local = 2
-
-            console.log(global)
-            console.log(local)
-        }
-        escopo()
+    function escopo() {
+        // variável local
+        let local = 2
 
         console.log(global)
-        // console.log(local)
+        console.log(local)
+    }
+    escopo()
 
-        if (global === 1) {
-            // variável com escopo de bloco
-            let bloco = 3
+    console.log(global)
+    // console.log(local)
 
-            console.log(bloco)
-        }
+    if (global === 1) {
+        // variável com escopo de bloco
+        let bloco = 3
 
-        // console.log(bloco)
+        console.log(bloco)
+    }
 
-        // Arrow Function
-        // - Sem parametros - Sem parametros precisa do parenteses vazio "()".
-        const semParametros = () => {
-            console.log("Sou uma função sem parametros.")
-        }
+    // console.log(bloco)
 
-        semParametros()
+    // Arrow Function
+    // - Sem parametros - Sem parametros precisa do parenteses vazio "()".
+    const semParametros = () => {
+        console.log("Sou uma função sem parametros.")
+    }
 
-        // - Somente um parametro - não precisa de parenteses
-        const comParametro = parametro => {
-            console.log(parametro)
-        }
+    semParametros()
 
-        comParametro("Teste de arrow function com 1 parametro!")
+    // - Somente um parametro - não precisa de parenteses
+    const comParametro = parametro => {
+        console.log(parametro)
+    }
 
-        // - Recebe mais de 1 parametro - precisa de parenteses
-        const multiParametro = (parametro1, parametro2) => {
-            console.log(parametro1)
-            console.log(parametro2)
-        }
+    comParametro("Teste de arrow function com 1 parametro!")
 
-        multiParametro("Aqui é o parametro 1", "E aqui o parametro 2")
+    // - Recebe mais de 1 parametro - precisa de parenteses
+    const multiParametro = (parametro1, parametro2) => {
+        console.log(parametro1)
+        console.log(parametro2)
+    }
 
-        // - Arrow function dentro de método que recebe uma função
-        var lista = [1, 2, 3, 4, 5, 6]
+    multiParametro("Aqui é o parametro 1", "E aqui o parametro 2")
 
-        lista.forEach(numero => {
-            numero = numero * 2
-            console.log(numero)
-        });
+    // - Arrow function dentro de método que recebe uma função
+    var lista = [1, 2, 3, 4, 5, 6]
 
-        lista.forEach(valor => {
-            console.log(valor)
+    lista.forEach(numero => {
+        numero = numero * 2
+        console.log(numero)
+    });
+
+    lista.forEach(valor => {
+        console.log(valor)
+    })
+
+    // - Arrow function com retorno dentro de método que recebe uma função
+    var valoresMaisUm = lista.map(valor => valor + 1)
+    console.log(valoresMaisUm)
+
+    // Função que retorna promessa
+    function delay(seg) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(seg)
+            }, seg * 1000)
         })
+    }
 
-        // - Arrow function com retorno dentro de método que recebe uma função
-        var valoresMaisUm = lista.map(valor => valor + 1)
-        console.log(valoresMaisUm)
+    // Função Assincrona
+    async function assincrona() {
+        console.log("Iniciou a execução da função")
+        let segundos
 
-        // Função que retorna promessa
-        function delay(seg) {
-            return new Promise((resolve, reject) => {
-                setTimeout(() => {
-                    resolve(seg)
-                }, seg * 1000)
-            })
+        segundos = await delay(3)
+        console.log(`Demorou ${segundos} segundos para logar!`)
+        segundos = await delay(5)
+        console.log(`Demorou ${segundos} segundos para logar!`)
+        segundos = await delay(10)
+        console.log(`Demorou ${segundos} segundos para logar!`)
+    }
+    assincrona()
+
+    // Função assincrona que faz o Fetch
+    async function getData() {
+        try {
+            const req = await fetch('https://jsonplaceholder.typicode.com/posts')
+            console.log(req)
+
+            const res = await req.json()
+            console.log(res)
+        } catch (error) {
+            console.log(error.message)
         }
+    }
 
-        // Função Assincrona
-        async function assincrona() {
-            console.log("Iniciou a execução da função")
-            let segundos
+    getData()
+        </code>
+    </pre>
+    </div>
+    <footer>
+        <div>
+            <p>©2023 - Curso de Programação Web - Desenvolvido por: ‎ <a href="https://github.com/BrunoAndradeDinis">
+                    Bruno
+                    Andrade</a></p>
+        </div>
+    </footer>
 
-            segundos = await delay(3)
-            console.log(`Demorou ${segundos} segundos para logar!`)
-            segundos = await delay(5)
-            console.log(`Demorou ${segundos} segundos para logar!`)
-            segundos = await delay(10)
-            console.log(`Demorou ${segundos} segundos para logar!`)
-        }
-        assincrona()
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="./js/funcoes.js">
 
-        // Função assincrona que faz o Fetch
-        async function getData() {
-            try {
-                const req = await fetch('https://jsonplaceholder.typicode.com/posts')
-                console.log(req)
-
-                const res = await req.json()
-                console.log(res)
-            } catch (error) {
-                console.log(error.message)
-            }
-        }
-
-        getData()
     </script>
 </body>
 

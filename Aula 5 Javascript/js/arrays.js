@@ -1,26 +1,3 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arrays</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/google/code-prettify@master/styles/sunburst.css">
-    <link rel="stylesheet" href="./css/styles.css">
-</head>
-
-<div class="container">
-    <h1>Arrays</h1>
-
-    <div class="alert alert-primary" role="alert">
-        Abra o console apertando <strong>F12</strong> e indo na aba console
-    </div>
-
-    <pre class="prettyprint">
-        <code class="language-javascript">
     var frutas = ["Maçã", "Banana", "Manga"]
 
     console.log(frutas)
@@ -117,21 +94,3 @@
         return aluno.idade > 24
     })
     console.log(encontrados)
-        </code>
-    </pre>
-</div>
-<footer>
-    <div>
-        <p>©2023 - Curso de Programação Web - Desenvolvido por: ‎ <a href="https://github.com/BrunoAndradeDinis">
-                Bruno
-                Andrade</a></p>
-    </div>
-</footer>
-<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-<script src="./js/arrays.js"></script>
-
-<body>
-
-</body>
-
-</html>
