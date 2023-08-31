@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - relatório</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/2474/2474209.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <header>
+        <div class="dropdown">
+            <button class="btn btn-dark" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-list"></i>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                <li><a class="dropdown-item" href="./formulario.html">Criar cadastro</a></li>
+
+            </ul>
+        </div>
+        <div class="ms-2">
+            <h3>Dashboard</h3>
+        </div>
+    </header>
+
+    <div class="container mt-3 mb-3">
+        <div class="pesquisa oculto row mb-3 animate__animated animate__fadeIn">
+            <div class="col-md-6">
+                <label for="filtro" class="form-label">Pesquisar Usuário</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Digite o nome do usuário:" id="filtro"
+                        oninput="filtrar()">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" onclick="filtrar()">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tabela oculto animate__animated animate__fadeIn">
+            <table class="table table-dark table-striped table-fixed table-hover">
+                <thead>
+                    <tr>
+                        <th width="50">Editar</th>
+                        <th width="50">Deletar</th>
+                        <th width="100">ID</th>
+                        <th width="150">Nome</th>
+                        <th width="200">E-mail</th>
+                        <th width="150">Data de nascimento</th>
+                        <th width="120">Telefone</th>
+                        <th width="600">Endereço completo</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="graficos oculto animate__animated animate__fadeIn">
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="grafico-cidades">
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div id="grafico-estados">
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="grafico-emails">
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div id="grafico-idades">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center animate__animated animate__fadeIn" id="loading">
+            <div class="spinner-grow" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" tabindex="-1" id="aviso">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Ops! Ocorreu um erro.</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Ocorreu um erro ao fazer a busca dos dados, tente novamente em instantes.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" tabindex="-1" id="deletar">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmar exclusão</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Confirma que deseja excluir o usuário " <strong id="nomeUsuario"></strong>" de ID: <strong
+                            id="idUsuario"></strong>?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" onclick="excluir()">
+                        Confirmar
+                        <span class="spinner-grow spinner-grow-sm oculto" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Voltar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" tabindex="-1" id="sucesso">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Sucesso!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Operação realizada com sucesso!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
