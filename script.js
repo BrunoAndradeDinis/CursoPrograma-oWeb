@@ -5,7 +5,7 @@ fechar.addEventListener("click", function () {
     iframeContainer.style.display = "none";
 });
 
-var anchorList = document.querySelectorAll('ul li a');
+var anchorList = document.querySelectorAll('a.btn-secondary');
 var iframe = document.querySelector("iframe")
 console.log(iframe)
 // Adiciona um evento de clique em cada âncora
@@ -20,6 +20,6 @@ anchorList.forEach(function (anchor) {
         iframeContainer.style.display = "block";
 
         let completa = document.querySelector("a")
-        completa.href = href 
+        completa.href = href
     });
 });
