@@ -28,10 +28,6 @@ img {
   100%{transform: rotate(360deg);}
 }
 
-div.shadow.rounded {
-  min-height: 35rem;
-}
-
 /* Aqui será modificado toda parte do Iframe para abrir uma janela */
 #iframeContainer {
     display: none;
@@ -73,7 +69,6 @@ input {
 }
 
 .btn-secondary {
-  display: block;
   text-decoration: none;
   color: azure;
   border-radius: 5px;
@@ -88,7 +83,7 @@ input {
   border-radius: 5px;
   position: fixed;
   bottom: 1em;
-  left: 40%;
+  left: 33%;
   text-align: center;
   padding: 1em;
   width: 40ch;
@@ -100,30 +95,4 @@ input {
   color: #FFF;
 }
 
-/* apagado */
-/*.container {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-          
-}*/
-
-/*
-.container div {
-  border-radius: 20px;
-  background-color: blueviolet;
-  padding: 1rem;
-  color: azure;
-  box-shadow: 0 0 20px black;
-}
-
-li {
-  list-style: none;
-  font-size: 1rem;
-  padding-left: 1em;
-  margin: 0 2rem .3em 0;
-  
-}
-
-*/
 
