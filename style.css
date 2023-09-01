@@ -92,6 +92,7 @@ input {
   text-align: center;
   padding: 1em;
   width: 40ch;
+  text-decoration: none;
 }
 
 .pagina:hover{
